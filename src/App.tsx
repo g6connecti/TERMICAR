@@ -9,7 +9,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ProductModal } from './components/ProductModal';
 import { QuoteBuilderModal, QuoteItem } from './components/QuoteBuilderModal';
-import { PdfCatalogModal } from './components/PdfCatalogModal';
+import { CatalogDownloadModal } from './components/CatalogDownloadModal';
 import { Product, COMPANY_INFO } from './data/products';
 import { ShoppingCart, MessageCircle } from 'lucide-react';
 
@@ -17,7 +17,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-  const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
+  const [isCatalogModalOpen, setIsCatalogModalOpen] = useState(false);
   const [quoteItems, setQuoteItems] = useState<QuoteItem[]>([]);
 
   // Add to quote
@@ -69,7 +69,7 @@ export default function App() {
       <Header
         quoteCount={totalQuoteCount}
         onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
-        onOpenPdfModal={() => setIsPdfModalOpen(true)}
+        onOpenPdfModal={() => setIsCatalogModalOpen(true)}
       />
 
       {/* Main Content Sections */}
@@ -78,6 +78,7 @@ export default function App() {
         <Hero
           onSearch={(query) => setSearchQuery(query)}
           onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
+          onOpenCatalogModal={() => setIsCatalogModalOpen(true)}
         />
 
         {/* Interactive Products Catalog */}
@@ -87,6 +88,7 @@ export default function App() {
           onSelectProduct={(product) => setSelectedProduct(product)}
           onAddToQuote={handleAddToQuote}
           quoteProductIds={quoteProductIds}
+          onOpenCatalogDownloadModal={() => setIsCatalogModalOpen(true)}
         />
 
         {/* Vehicle Applications & Fleets */}
@@ -160,10 +162,14 @@ export default function App() {
         }}
       />
 
-      {/* PDF Catalog Modal */}
-      <PdfCatalogModal
-        isOpen={isPdfModalOpen}
-        onClose={() => setIsPdfModalOpen(false)}
+      {/* Catalog Download Modal (Google Drive Installer & Online Access) */}
+      <CatalogDownloadModal
+        isOpen={isCatalogModalOpen}
+        onClose={() => setIsCatalogModalOpen(false)}
+        onNavigateToCatalog={() => {
+          const el = document.getElementById('produtos');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }}
       />
     </div>
   );

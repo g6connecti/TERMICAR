@@ -95,6 +95,31 @@ export function CustomEngineeringSection() {
                 </p>
               </div>
             </div>
+
+            {/* Visual Banner Peças sob Desenho */}
+            <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl group">
+              <div className="aspect-[16/9] overflow-hidden relative">
+                <img
+                  src="/images/metrology_bench_1790695297615.jpg"
+                  alt="Peças sob Desenho e Usinagem Especial Termicar"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/images/inspection.jpg';
+                  }}
+                  referrerPolicy="no-referrer"
+                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                  <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                    <span className="h-2 w-2 rounded-full bg-red-500"></span>
+                    <span>Peças Sob Desenho Técnico & Amostra</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-300 bg-slate-900/80 px-2 py-0.5 rounded border border-slate-700">
+                    Desenho 2D / 3D
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Interactive Specification Form */}

@@ -264,7 +264,7 @@ export const PRODUCTS_DATA: Product[] = [
     coating: 'Zincagem, Fosfatização, Geomet, Oxidação Negra ou conforme especificação',
     norm: 'Projetos sob medida',
     oemReference: 'Conforme Desenho do Cliente',
-    image: '/images/inspection.jpg',
+    image: '/images/metrology_bench_1790695297615.jpg',
     featured: true,
   },
 ];
@@ -287,10 +287,17 @@ export const COMPANY_INFO = {
   contact: {
     phone: '(11) 2301-0277',
     phoneRaw: '1123010277',
-    whatsapp: '(11) 98765-4321', // Support direct quote via WhatsApp
-    whatsappRaw: '551123010277',
+    whatsapp: '+55 11 2301-0246',
+    whatsappRaw: '551123010246',
     email: 'termicar@termicar.com.br',
     hours: 'Segunda a Sexta: 07h30 às 17h30',
+  },
+  catalogInstaller: {
+    fileName: 'InstalarCatalogoTermicar.exe',
+    title: 'Catálogo Eletrônico Termicar (Windows)',
+    description: 'Instale o aplicativo de consulta rápida de autopeças Termicar no seu computador (Windows). Consulta offline completa de terminais, pinos, esticadores e conversões OEM.',
+    // Google Drive direct download URL or file link
+    driveUrl: 'https://drive.google.com/uc?export=download&id=YOUR_DRIVE_FILE_ID',
   },
   stats: [
     { value: '55+', label: 'Anos de Tradição', desc: 'Fundada em 1969 em São Paulo' },

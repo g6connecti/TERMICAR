@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Search, ArrowRight, ShieldCheck, Cog, Truck, Award } from 'lucide-react';
+import { Search, ArrowRight, ShieldCheck, Cog, Truck, Award, Download } from 'lucide-react';
 import { COMPANY_INFO } from '../data/products';
 
 interface HeroProps {
   onSearch: (query: string) => void;
   onOpenQuoteModal: () => void;
+  onOpenCatalogModal: () => void;
 }
 
-export function Hero({ onSearch, onOpenQuoteModal }: HeroProps) {
+export function Hero({ onSearch, onOpenQuoteModal, onOpenCatalogModal }: HeroProps) {
   const [localSearch, setLocalSearch] = useState('');
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -82,13 +83,14 @@ export function Hero({ onSearch, onOpenQuoteModal }: HeroProps) {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-4">
-            <a
-              href="#produtos"
-              className="inline-flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-red-950/50 transition-all hover:bg-red-500 hover:gap-3"
+            <button
+              onClick={onOpenCatalogModal}
+              className="inline-flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-red-950/50 transition-all hover:bg-red-500 hover:gap-3 cursor-pointer"
             >
+              <Download className="h-4 w-4" />
               <span>Ver Catálogo de Peças</span>
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </button>
 
             <button
               onClick={onOpenQuoteModal}

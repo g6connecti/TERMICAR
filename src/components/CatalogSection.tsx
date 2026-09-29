@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Search, Filter, Plus, Check, Eye, FileSpreadsheet, ArrowUpDown } from 'lucide-react';
+import { Search, Filter, Plus, Check, Eye, FileSpreadsheet, ArrowUpDown, Download } from 'lucide-react';
 import { Product, PRODUCTS_DATA, CATEGORIES, VEHICLE_BRANDS } from '../data/products';
 
 interface CatalogSectionProps {
@@ -8,6 +8,7 @@ interface CatalogSectionProps {
   onSelectProduct: (product: Product) => void;
   onAddToQuote: (product: Product, quantity: number) => void;
   quoteProductIds: string[];
+  onOpenCatalogDownloadModal?: () => void;
 }
 
 export function CatalogSection({
@@ -16,6 +17,7 @@ export function CatalogSection({
   onSelectProduct,
   onAddToQuote,
   quoteProductIds,
+  onOpenCatalogDownloadModal,
 }: CatalogSectionProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('todos');
   const [selectedBrand, setSelectedBrand] = useState<string>('Todos');
@@ -83,14 +85,25 @@ export function CatalogSection({
             </p>
           </div>
 
-          <div className="text-right">
-            <span className="text-xs text-slate-400">Total listado:</span>
-            <div className="text-xl font-bold font-mono text-white tabular-nums">
-              {filteredProducts.length}{' '}
-              <span className="text-xs font-normal text-slate-400">
-                {filteredProducts.length === 1 ? 'item' : 'itens'}
-              </span>
+          <div className="flex flex-col sm:items-end gap-2">
+            <div className="text-right">
+              <span className="text-xs text-slate-400">Total listado:</span>
+              <div className="text-xl font-bold font-mono text-white tabular-nums">
+                {filteredProducts.length}{' '}
+                <span className="text-xs font-normal text-slate-400">
+                  {filteredProducts.length === 1 ? 'item' : 'itens'}
+                </span>
+              </div>
             </div>
+            {onOpenCatalogDownloadModal && (
+              <button
+                onClick={onOpenCatalogDownloadModal}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-red-900/60 bg-red-950/40 px-3 py-1.5 text-xs font-bold text-red-400 hover:bg-red-900/50 hover:text-white transition-colors"
+              >
+                <Download className="h-3.5 w-3.5" />
+                <span>Baixar Instalador .EXE</span>
+              </button>
+            )}
           </div>
         </div>
 

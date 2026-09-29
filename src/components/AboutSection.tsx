@@ -99,10 +99,10 @@ export function AboutSection() {
             <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 p-2 shadow-2xl">
               <div className="aspect-[4/3] overflow-hidden rounded-xl bg-slate-900 relative">
                 <img
-                  src="/images/inspection.jpg"
-                  alt="Inspeção de qualidade e metrologia na Termicar Auto Peças"
+                  src="/images/metrology_bench_1790695297615.jpg"
+                  alt="Laboratório de Metrologia e Qualidade da Termicar Auto Peças"
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = '/factory_quality_inspection_1790651271880.jpg';
+                    (e.currentTarget as HTMLImageElement).src = '/images/inspection.jpg';
                   }}
                   referrerPolicy="no-referrer"
                   className="h-full w-full object-cover"

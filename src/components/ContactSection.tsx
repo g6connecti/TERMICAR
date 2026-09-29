@@ -75,6 +75,27 @@ export function ContactSection() {
                   </div>
                 </div>
 
+                {/* WhatsApp */}
+                <div className="flex items-start gap-3.5">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-600/10 text-emerald-400 border border-emerald-900/30">
+                    <MessageCircle className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      WhatsApp Comercial
+                    </div>
+                    <a
+                      href={`https://wa.me/${COMPANY_INFO.contact.whatsappRaw}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base font-bold text-emerald-400 hover:text-emerald-300 transition-colors font-mono"
+                    >
+                      {COMPANY_INFO.contact.whatsapp}
+                    </a>
+                    <div className="text-xs text-slate-500">Atendimento rápido e cotações</div>
+                  </div>
+                </div>
+
                 {/* E-mail */}
                 <div className="flex items-start gap-3.5">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-600/10 text-red-400 border border-red-900/30">
@@ -145,7 +166,7 @@ export function ContactSection() {
                   className="w-full flex items-center justify-center gap-2 rounded-xl bg-emerald-600 py-3 text-xs sm:text-sm font-bold text-white hover:bg-emerald-500 shadow-lg shadow-emerald-950/40 transition-colors"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  <span>Conversar Agora pelo WhatsApp</span>
+                  <span>Conversar pelo WhatsApp</span>
                 </button>
               </div>
             </div>
