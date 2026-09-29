@@ -1,0 +1,6 @@
+{
+  "name": "Termicar - Indústria de Auto Peças",
+  "description": "Fabricante de autopeças de alta precisão desde 1969. Linha completa de terminais articulados, pinos esféricos, esticadores e peças especiais para caminhões e ônibus.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
