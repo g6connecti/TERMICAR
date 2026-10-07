@@ -296,8 +296,9 @@ export const COMPANY_INFO = {
     fileName: 'InstalarCatalogoTermicar.exe',
     title: 'Catálogo Eletrônico Termicar (Windows)',
     description: 'Instale o aplicativo de consulta rápida de autopeças Termicar no seu computador (Windows). Consulta offline completa de terminais, pinos, esticadores e conversões OEM.',
-    // Google Drive direct download URL or file link
-    driveUrl: 'https://drive.google.com/uc?export=download&id=YOUR_DRIVE_FILE_ID',
+    directDownloadUrl: '/InstalarCatalogoTermicar.exe',
+    compatibility: 'Windows 10 / 11 / 7 (32-bit e 64-bit)',
+    version: 'Edição 2026 Oficial',
   },
   stats: [
     { value: '55+', label: 'Anos de Tradição', desc: 'Fundada em 1969 em São Paulo' },
